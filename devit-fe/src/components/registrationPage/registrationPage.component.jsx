@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import {registration} from "../../services/index";
 import axios from "axios";
 
 
