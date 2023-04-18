@@ -18,6 +18,7 @@ const registration = async (req, res) => {
     })
     await user.save();
     res.status(201).json({ message: 'User cReAtEd' });
+
   } catch (err){
     console.log(err)
   }
