@@ -1,0 +1,38 @@
+.post{
+  border: 1.5px solid #000;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto 10px;
+  padding: 15px;
+  .post-info{
+    text-align: left;
+    font-size: 15px;
+    margin: 10px auto;
+    overflow-wrap: break-word;
+    span{
+      font-weight: 700;
+    }
+    img{
+      width: 100%;
+      height: auto;
+      margin: 5px auto;
+    }
+  }
+  .post__buttons{
+    text-align: right;
+
+    .post__button{
+      cursor: pointer;
+      font-size: 25px;
+      margin: 5px 10px;
+      transition: color 0.2s linear;
+      -webkit-transition: color 0.2s linear;
+      -moz-transition: color 0.2s linear;
+      -ms-transition: color 0.2s linear;
+      -o-transition: color 0.2s linear;
+    }
+    .post__button:hover{
+      color: #29d529;
+    }
+  }
+}

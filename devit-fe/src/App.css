@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  height: 100%;
+  max-width: 1800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+button{
+  cursor: pointer;
+  max-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  background: #29d529;
+  border: 1px solid #29d529;
+  padding: 5px;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+button:disabled,
+button[disabled] {
+  background-color: #cac1c1;
+  cursor: not-allowed;
+}

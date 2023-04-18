@@ -1,0 +1,32 @@
+.header__inner{
+  display: flex;
+  justify-content: space-between;
+  .nav{
+    margin: 30px 0;
+    display: flex;
+    font-size: 20px;
+    button{
+      margin: 0 10px;
+      text-transform: capitalize;
+    }
+    a.login-btn:disabled,
+    a.login-btn[disabled]{
+      background-color: #cac1c1;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .nav-link{
+      text-decoration: none;
+      font-size: 25px;
+      margin: 0 10px;
+      transition: color 0.2s linear;
+      -webkit-transition: color 0.2s linear;
+      -moz-transition: color 0.2s linear;
+      -ms-transition: color 0.2s linear;
+      -o-transition: color 0.2s linear;
+    }     
+    .nav-link:hover{
+      color: #29d529;
+    }
+  }
+}
