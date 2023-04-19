@@ -4,7 +4,9 @@ import axios from "axios";
 const getPosts = async (limit, offset) => {
   return await axios.get(`http://localhost:8000/posts?limit=${limit}&offset=${offset}`)
 }
-
+const searching = async (search = '') => {
+  return await axios.get(`http://localhost:8000/posts?search=${search}`)
+}
 const getPost = async (id) => {
   return await axios.get(`http://localhost:8000/posts?id=${id}`)
 }
@@ -23,4 +25,4 @@ const deletePost = async (id) => {
 
 
 
-export { getPosts, getPost, createPost, updatePost,  deletePost};
+export { getPosts, getPost, createPost, updatePost,  deletePost, searching};

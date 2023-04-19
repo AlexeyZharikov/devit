@@ -1,7 +1,19 @@
 .posts-inner{
-  display: flex;
-  flex-wrap: wrap;
+  .search{
+    max-width: 600px;
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    input{
+      margin: 0 10px;
+    }
+    button{
+      max-width: 100px;
+      padding: 1px;
+    }
+  }
+  .all-posts{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
-
-
-

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getPosts, deletePost } from "../../../services/index";
+import { getPosts ,deletePost, searching } from "../../../services/index";
 import Item from "../Item/item.component";
 import "./getPosts.component.scss";
 
@@ -7,6 +7,8 @@ const GetPosts = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [offset, setOffset] = useState(0);
+  const [search, setSearch] = useState('');
+
 
   useEffect(() => {
     setLoading(true);
@@ -25,6 +27,7 @@ const GetPosts = () => {
       setPosts(posts.filter((item) => item._id !== id))
     );
   };
+
   const loadMore = (e) => {
     e.preventDefault();
     setOffset(offset + 3); 
@@ -50,6 +53,22 @@ const GetPosts = () => {
     );
   });
 
+  const handleSearch = () => {
+    setLoading(true);
+    setPosts([]); 
+    setOffset(0); 
+    searching(search) 
+      .then((res) => {
+        console.log(search)
+        setPosts(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  
+
   return (
     <div className="main">
       {loading ? (
@@ -59,7 +78,20 @@ const GetPosts = () => {
       ) : (
         <div className="posts">
           <div className="container">
-            <div className="posts-inner">{postsArr}</div>
+            <div className="posts-inner">
+              <div className="search">
+                  <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search by title..."
+                  />
+                  <button onClick={handleSearch}>Search</button>
+                </div>
+                <div className="all-posts">
+                  {postsArr}  
+                </div>
+              </div>
             <div className="button">
               <button onClick={loadMore}>
                   Load +3

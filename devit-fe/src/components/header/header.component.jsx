@@ -5,14 +5,12 @@ import LogoutButton from "../logoutBtn/logout.component";
 import LoginButton from "../loginBtn/loginBtn.component";
 
 const Header = () => {
-  const token = localStorage.token;
   return(
     <header className="header">
       <div className="container">
         <div className="header__inner">
           <h1>DevIT test task</h1>
           <div className="nav">
-            {/* <NavLink disabled={token} className="login-btn" to="/login">login</NavLink> */}
             <LoginButton/>
             <LogoutButton />
             <NavLink className="nav-link" to="/">Main</NavLink>
